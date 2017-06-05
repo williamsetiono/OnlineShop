@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf792949f24e464b972502f64154b6ce" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineShop.Models.Account" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShop.Models.Category" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShop.Models.Coupon" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShop.Models.Image" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShop.Models.Order" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShop.Models.OrderDetail" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShop.Models.Product" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShop.Models.Role" Width="1.5" PointX="1.5" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineShop.Models.Setting" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="OnlineShop.Models.FK_Account_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShop.Models.FK_Order_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShop.Models.FK_Category_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShop.Models.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShop.Models.FK_Order_Coupon" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShop.Models.FK_Image_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShop.Models.FK_OrderDetail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineShop.Models.FK_OrderDetail_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

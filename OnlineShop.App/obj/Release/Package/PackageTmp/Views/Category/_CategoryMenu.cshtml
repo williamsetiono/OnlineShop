@@ -1,0 +1,56 @@
+﻿@using OnlineShop.Core.Resources
+@using OnlineShop.Models.Entities
+@model IEnumerable<Category>
+<div class="col-sm-3">
+    <div class="left-sidebar">
+
+        <div id="accordian" class="panel-group category-products">
+            <!--category-productsr-->
+            <div class="panel panel-default" id="categoryMenu">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="@Url.Action("Index", "Home")" class="categoryItem" data-id="">@Resource.LabelDefaultCategoryItem</a></h4>
+                    </div>
+                </div>
+                @foreach (var category in Model.Where(x => x.ParentId == null))
+            {
+                if (Model.Any(a => a.ParentId == category.Id))
+                {
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a href="@Url.Action("Index","Home",new {id = category.Id})" class="categoryItem" data-id="@category.Id">
+                        @category.Name
+                    </a>
+                    <a href="javascript:void(0)">
+                        <span data-target="#@("Category_" + category.Id)" data-toggle="collapse" class="badge pull-right"><i class="fa fa-plus"></i></span>
+                    </a>
+                </h4>
+            </div>
+            <div class="panel-collapse collapse" id="@("Category_" + category.Id)">
+                <div class="panel-body">
+                    <ul>
+                        @foreach (var subCategory in Model.Where(x => x.ParentId == category.Id))
+                                {
+                                <li><a href="@Url.Action("Index", "Home", new { id = subCategory.Id})" class="categoryItem" data-id="@subCategory.Id">@subCategory.Name </a></li>
+                                }
+                    </ul>
+                </div>
+            </div>
+                }
+                else
+                {
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a href="@Url.Action("Index", "Home", new { id = category.Id})" class="categoryItem" data-id="@category.Id">@category.Name</a></h4>
+                </div>
+            </div>
+                }
+            }
+            </div>
+        </div><!--/category-productsr-->
+        <!--/brands_products-->
+        <!--/price-range-->
+        <!--/shipping-->
+
+    </div>
+</div>

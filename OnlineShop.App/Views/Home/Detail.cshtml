@@ -1,0 +1,65 @@
+﻿@using OnlineShop.Core.Provider
+@using OnlineShop.Core.Resources
+@model OnlineShop.Core.Models.Products.ProductDetailViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = Constants.UserSplitLayOut;
+    var currencyUnit = Constants.SettingCurrencyUnit;
+}
+    <div class="product-details">
+        <!--product-details-->
+        <div class="col-sm-5">
+            <div class="view-product">
+                <img src="@(Model.MainImg)" alt="@Model.MainImg" />
+            </div>
+            <div id="similar-product" class="carousel slide" data-ride="carousel">
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item">
+                        @for (int i = 0; i < Model.Imgs.Length; i++)
+                        {
+
+                            <a href=""><img src="@( Model.Imgs[i])" alt="@Model.Imgs[i]"></a>
+                        }
+                    </div>
+
+                </div>
+
+                <!-- Controls -->
+                <a class="left item-control" href="#similar-product" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right item-control" href="#similar-product" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+
+        </div>
+        <div class="col-sm-7">
+            <div class="product-information">
+                <!--/product-information-->
+                <h2>@Model.ProductName</h2>
+                <p>ID: @Model.Id</p>
+                @*<img src="images/product-details/rating.png" alt="" />*@
+                <span>
+                    <span>@(currencyUnit + Model.Price)</span>
+                    <label>@Resource.HeaderQuantity:</label>
+                    <input type="text" value="@Model.Quantity" id="Quantity"/>
+                    <button type="button" class="btn btn-fefault cart" onclick="addToCart('@Model.Id')">
+                        <i class="fa fa-shopping-cart"></i>
+                        @Resource.LabelAddToCart
+                    </button>
+                </span>
+                <p><b>@Resource.LabelAvailability:</b> @Model.Status</p>
+                <p><b>@Resource.HeaderDescription:</b> @Model.Description</p>
+            </div><!--/product-information-->
+        </div>
+    </div><!--/product-details-->
+@section scripts{
+    <script>
+        function addToCart(id) {
+            cart.addItem(id);
+        }
+    </script>
+}

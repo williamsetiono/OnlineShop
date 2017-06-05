@@ -1,0 +1,165 @@
+﻿@using OnlineShop.Core.Models.MessageModels
+@using OnlineShop.Core.Models.Orders
+@using OnlineShop.Core.Provider
+@using OnlineShop.Core.Resources
+@{
+    var settings = new Dictionary<string,string>();
+    if (ViewBag.BaseSetting != null)
+    {
+        settings = (Dictionary<string,string>)ViewBag.BaseSetting;
+    }
+    var cartObj = Session[Constants.CookieCart];
+    var quantity = 0;
+    try
+    {
+        var cart = (CartViewModel)cartObj;
+        quantity = cart == null || cart.Items == null ? 0 : cart.Items.Count;
+    }catch(Exception ex)
+    {
+    }
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="@Url.Content("~/Content/")/favicon.ico" />
+    <title>@ViewBag.Title @(settings != null && settings.ContainsKey(Constants.SettingWebsiteName) ? "- " + settings[Constants.SettingWebsiteName] : "- My ASP.NET Application")</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/animate.css" rel="stylesheet" />
+    <link href="~/Content/price-range.css" rel="stylesheet" />
+    <link href="~/Content/prettyPhoto.css" rel="stylesheet" />
+    <link href="~/Content/responsive.css" rel="stylesheet" />
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+    <header id="header">
+        <!--header-->
+        <!--/header_top-->
+
+        <div class="header-middle">
+            <!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            @if (settings != null && settings.ContainsKey(Constants.SettingLogo))
+                            {
+                                <a href="@Url.Action("Index", "Home")"><img alt="" src="@settings[Constants.SettingLogo]"></a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Index","Home")"><img alt="" src="/Content/images/sites/logo.png"></a>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                                <li><a href="@Url.Action("ViewCart","Orders")"><i class="fa fa-shopping-cart"></i> @Resource.Cart<span class="badge" id="cart-quantity">@quantity </span></a></li>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li role="presentation" class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                            @User.Identity.Name <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="@Url.Action("Profile", "User")"><i class="fa fa-user"></i> @Resource.Profile</a></li>
+                                            <li><a href="@Url.Action("Index", "Orders")"><i class="fa fa-list-alt fa-fw"></i> @Resource.Orders</a></li>
+                                            <li role="presentation" class="dropdown">
+                                                <a href="@Url.Action("SignOut", "User")"><i class="fa  fa-sign-out"></i>@Resource.LogOut</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li><a href="@Url.Action("Login","Account")"><i class="fa fa-lock"></i> @Resource.Login</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-middle-->
+
+
+    </header>
+    <section id="container-wrapper">
+        <div class="container">
+            <div class="panel-body " id="notify-wrapper">
+                @if (TempData.Keys.Contains(Constants.NotifyMessage))
+                {
+                    var message = (NotifyModel)TempData[Constants.NotifyMessage];
+                    <div class="alert @(message.Result ? "alert-success" : "alert-danger") alert-dismissable">
+                        <button class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <span class="alert-content">@message.Message</span>
+                    </div>
+                }
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <!--Footer-->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left"> @Html.Raw(Resource.CopyRight)</p>
+                </div>
+            </div>
+        </div>
+
+    </footer><!--/Footer-->
+    <div id="notify-message">
+        <div class="alert alert-dismissable" id="alert-wrapper">
+            <button class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <span class="alert-content"></span>
+        </div>
+    </div>
+    <div class="modal fade" id="msgModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="modal-header">Modal Header</h4>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="loadding-wrapper">
+        <div id="loadding-spinner">
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom spinner"></i>
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/price-range.js"></script>
+    <script src="~/Scripts/jquery.scrollUp.min.js"></script>
+    <script src="~/Scripts/jquery.prettyPhoto.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    <script src="~/Scripts/js.cookie.js"></script>
+    <script src="~/Scripts/site.js"></script>
+    <script src="~/Scripts/common.js"></script>
+    <script src="~/Scripts/cart.js"></script>
+    @RenderSection("scripts", required: false)
+    <a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: none;"><i class="fa fa-angle-up"></i></a>
+</body>
+</html>

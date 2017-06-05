@@ -1,0 +1,57 @@
+﻿@using OnlineShop.Core.Resources
+@model OnlineShop.Core.Models.Orders.CartViewModel
+@{
+    ViewBag.Title = "CheckOut";
+}
+@using (Html.BeginForm("CheckOut", "Orders",FormMethod.Post))
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>@Resource.HeaderProduct</th>
+                    <th>@Resource.HeaderPrice</th>
+                    <th>@Resource.HeaderQuantity</th>
+                    <th>@Resource.HeaderTotal</th>
+                </tr>
+            </thead>
+            @if (Model != null && Model.Items.Any())
+            {
+                <tbody>
+                    @for (int i = 0; i < Model.Items.Count; i++)
+                    {
+                        <tr>
+                            <td>@(i + 1)</td>
+                            <td>@Model.Items.ElementAt(i).ProductName</td>
+                            <td>@Model.Items.ElementAt(i).Price</td>
+                            <td>@Model.Items.ElementAt(i).Quantity</td>
+                            <td>@Model.Items.ElementAt(i).Total</td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>@Resource.HeaderCoupon</td>
+                        <td colspan="2"><input type="text" id="Coupon" name="Coupon" class="form-control" onblur="cart.CheckCouponInput(this)" /></td>
+                        <td colspan="2" class="text-right"><label id="CouponValue">0</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            @Resource.HeaderTotal
+                        </td>
+                        <td class="text-right"><label id="cartTotal">@Model.Total</label></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            <button id="Checkout" type="submit">@Resource.Checkout</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            }
+        </table>
+    </div>
+}
+@section scripts{
+    <script src="~/Scripts/cart.js"></script>
+}

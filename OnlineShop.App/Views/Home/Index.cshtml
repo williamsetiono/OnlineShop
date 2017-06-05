@@ -1,0 +1,96 @@
+﻿@using OnlineShop.Core.Provider
+@using OnlineShop.Core.Resources
+@{
+    ViewBag.Title = Resource.TitleUserHomePage;
+    Layout = Constants.UserSplitLayOut;
+    var settings = (Dictionary<string,string>)ViewBag.BaseSetting;
+    var currencyUnit = Constants.SettingCurrencyUnit;
+}
+<input type="hidden" value="" id="categoryId" />
+<div class="features_items" id="features_items">
+    <!--features_items-->
+   
+    <ul class="pagination" id="pagination">
+       
+    </ul>
+</div><!--features_items-->
+
+@section scripts{
+@Scripts.Render("~/bundles/datatables")
+    <script>
+        loadItems( null, 1);
+        function loadItems(category, index) {
+            var params = getparams(category);
+            params.Index = index;
+            $.ajax({
+                url: '/Home/GetItems',
+                type: 'Post',
+                data: params,
+                success: function(response) {
+                    drawItems(response, index, params.categoryId);
+                }
+            });
+        }
+
+        var pagination = {
+            render: function(page, index, categoryid) {
+                var html = '';
+                for (var i = 1; i <= page; i++) {
+                    if (i == index) {
+                        html += '<li class="active"><a href="javascript:void(0)" onClick="loadItems(' + categoryid + ',' + i + ')">' + i + '</a></li>';
+                    } else
+                        html += '<li><a href="javascript:void(0)" onClick="loadItems(' + categoryid + ',' + i + ')">' + i + '</a></li>';
+                }
+                $('#features_items').find('#pagination').append(html);
+            }
+        };
+        function drawItems(response) {
+            var html = '';
+            var itemNumber = 3;
+            if (response != undefined && response.Data.length > 0) {
+                $.each(response.Data, function(i, o) {
+                    html += '<div class="col-sm-4">' +
+                        '<div class="product-image-wrapper">' +
+                        '<div class="single-products">' +
+                        '<div class="productinfo text-center">' +
+                        '<a href="/Home/Detail/' + o.Id+'" class="image-wrapper">' +
+                        '<img alt="" src="' + o.Image + '">' +
+                        '<h2>@currencyUnit' + o.Price + '</h2>' +
+                        '<p>' + o.ProductName + '</p>' +
+                        '</a>' +
+                        '<a class="btn btn-default add-to-cart" href="javascript:void(0)" onClick="addToCart(\'' + o.Id + '\')"><i class="fa fa-shopping-cart"></i>Add to cart</a>' +
+                        '</div></div></div></div>';
+                   
+                });
+                html += '<div class="clearfix"></div>';
+                html += '<ul class="pagination" id="pagination"></ul>';
+                $('#features_items').html(html);
+                pagination.render(response.Page, response.Index);
+            } else {
+                $('#features_items').html('');
+            }
+        }
+        function getparams(category) {
+            if (category == undefined) {
+                category = $('#categoryId').val();
+            }
+            var datatableRequest = {
+                Size: "@settings["PageNumbers"]",
+                categoryId: category,
+            };
+            return datatableRequest;
+        }
+        function addToCart(id) {
+            cart.addItem(id);
+        }
+        $(function() {
+            $('#categoryMenu').on('click', '.categoryItem', function(e) {
+                e.preventDefault();
+                var $this = $(this);
+                var categoryId = $this.data('id');
+                $('#categoryId').val(categoryId);
+                loadItems(categoryId, 1);
+            });
+        });
+    </script>
+}

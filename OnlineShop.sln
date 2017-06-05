@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.App", "OnlineShop.App\OnlineShop.App.csproj", "{13C69B4F-D783-4599-BF9D-F0B0EFAA0576}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Models", "OnlineShop.Models\OnlineShop.Models.csproj", "{66F1B251-3A19-417A-B6B4-113FEFC86546}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineShop.Core", "OnlineShop.Core\OnlineShop.Core.csproj", "{5510B470-9775-4785-81F9-6880A7DC95D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7C820ECD-6823-4A1A-9E9A-F8190880A794}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13C69B4F-D783-4599-BF9D-F0B0EFAA0576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13C69B4F-D783-4599-BF9D-F0B0EFAA0576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13C69B4F-D783-4599-BF9D-F0B0EFAA0576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13C69B4F-D783-4599-BF9D-F0B0EFAA0576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66F1B251-3A19-417A-B6B4-113FEFC86546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66F1B251-3A19-417A-B6B4-113FEFC86546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66F1B251-3A19-417A-B6B4-113FEFC86546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66F1B251-3A19-417A-B6B4-113FEFC86546}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5510B470-9775-4785-81F9-6880A7DC95D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5510B470-9775-4785-81F9-6880A7DC95D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5510B470-9775-4785-81F9-6880A7DC95D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5510B470-9775-4785-81F9-6880A7DC95D4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

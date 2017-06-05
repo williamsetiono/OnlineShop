@@ -1,0 +1,83 @@
+﻿@using OnlineShop.Core.Provider
+@using OnlineShop.Core.Resources
+@model OnlineShop.Core.Models.Orders.CartViewModel
+@{
+    ViewBag.Title = Resource.TitleViewCart;
+    Layout = Constants.UserLayOut;
+}
+
+<section id="cart_items">
+    <div class="">
+        <div class="breadcrumbs">
+            <ol class="breadcrumb">
+                <li><a href="@Url.Action("Index","Home")">@Resource.LabelHome</a></li>
+                <li class="active">@Resource.LabelShoppingCart</li>
+            </ol>
+        </div>
+        <div class="table-responsive cart_info">
+            <table class="table table-condensed" id ="cart-table">
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">@Resource.HeaderItem</td>
+                        <td class="description">@Resource.HeaderItem</td>
+                        <td class="price">@Resource.HeaderPrice</td>
+                        <td class="quantity">@Resource.HeaderQuantity</td>
+                        <td class="total">@Resource.HeaderTotal</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Items)
+                    {
+                        <tr data-id="@item.ProductId">
+                            <td class="cart_product">
+                                <a href="" class="productinfo"><img src="@item.Image" alt=""></a>
+                            </td>
+                            <td class="cart_description">
+                                <h4><a href="">@item.ProductName</a></h4>
+                                <p>@item.Description</p>
+                            </td>
+                            <td class="cart_price">
+                                <p class="cart_price">@item.Price</p>
+                            </td>
+                            <td class="cart_quantity">
+                                <div class="cart_quantity_button">
+                                    <a class="cart_quantity_up" onclick="cart.IncreaseQuantity(this)"> + </a>
+                                    <input class="cart_quantity_input" type="text" name="quantity" value="@item.Quantity" autocomplete="off" size="2">
+                                    <a class="cart_quantity_down" onclick="cart.DecreaseQuantity(this)"> - </a>
+                                </div>
+                            </td>
+                            <td class="cart_total">
+                                <p class="cart_total_price">@item.Total</p>
+                            </td>
+                            <td class="cart_delete">
+                                <a class="cart_quantity_delete" onclick="cart.RemoveProduct(this)"><i class="fa fa-times"></i></a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                @if (Model.Items.Any())
+                {
+                    <tfoot>
+                        <tr>
+                            <td colspan="6" class="text-right ">
+                                <a href="@Url.Action("Checkout","Orders")" class="btn btn-primary cart_buy_btn" >@Resource.LabelBuyThem</a>
+                            </td>
+                        </tr>
+                    </tfoot>   
+                }
+            </table>
+        </div>
+    </div>
+</section> <!--/#cart_items-->
+@section scripts{
+    <script>
+        $('#cart-table').on('change', 'input.cart_quantity_input', function () {
+            spinner.show();
+            var $this = $(this);
+            var id = $this.closest('tr').data('id');
+            cart.UpdateQuantityItem(id,$this.val(),'@Model.UserName');
+            spinner.close();
+        })
+    </script>
+}

@@ -1,0 +1,188 @@
+﻿@using OnlineShop.Core.Provider
+@model OnlineShop.Core.Models.Products.ProductViewModel
+@{
+    ViewBag.Title = "Create";
+    var imageStorePath = Constants.ImageStore;
+}
+<style>
+    .img-preview {
+        min-height: 180px;
+        max-height: 400px;
+        text-align: center;
+        overflow: hidden;
+    }
+        .img-preview img{
+            max-width: 100%;
+        } textarea {
+            max-width: 100%;
+        }
+    .img-item {
+        max-width: 24%;
+        max-height: 80px;
+        display: inline-block;
+        margin-right: 1%;
+        position: relative;
+        overflow: hidden;
+    }
+        
+        .img-item img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .img-item:hover {
+            background-color: black;
+        }
+            .img-item:hover .img-control:after {
+                z-index: -3;
+                opacity: 0.7;
+            }
+            .img-item:hover .img-control {
+                display: block;
+                text-align: center;
+                z-index: 1;
+            }
+
+
+    .img-control:after {
+        background-color: black;
+        content: "";
+        right: 1%;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -9;
+    }
+    .img-control {
+        width: 100%;
+        height: 30px;
+        position: absolute;
+        display: none;
+        color: white;
+        bottom: 0;
+        cursor: pointer;
+    }
+        .img-control i {
+            width: 50%;
+            float: left;
+            display: block;
+        }
+             #page-wrapper {
+                    padding-bottom: 5px;
+                }
+             .border-right-1 {
+                 border-right: 1px solid white;
+             }
+</style>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Create Product
+            </div>
+            <div class="panel-body">
+                    @using (Html.BeginForm("Create", "Product", null, FormMethod.Post, new Dictionary<string, object>() { { "role", "form" }, { "enctype", "multipart/form-data" } }))
+                    {
+                        <div class="col-md-4 img-wrapper">
+                            <input type="hidden" value="0" id="mainImg" name="MainImg" />
+                            <div class="img-preview">
+                                @if (!string.IsNullOrEmpty(Model.Image))
+                                {
+                                    <img src="@(imageStorePath+Model.Image)" alt="@Model.ProductName" />
+                                }
+                            </div>
+                            <input type="file" multiple="multiple" class="img" name="Images" id="Images" />
+                            @if (Model.ImageList != null)
+                            {
+                                for (var i = 0; i < Model.ImageList.Count(); i++)
+                                {
+                                    <div class="img-item">
+                                        <img src="@(imageStorePath+Model.ImageList[i])" alt="@Model.ProductName" />
+                                    </div>
+                                }
+                            }
+                            <div class="img-catalog "></div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="col-md-2">
+                                        @Html.LabelFor(a => a.ProductName)
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Html.TextBoxFor(a => a.ProductName, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(a => a.ProductName,null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2">
+                                        @Html.LabelFor(a => a.CategoryId)
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Html.DropDownListFor(a => a.CategoryId, new SelectList(Model.Categories, "Key", "Value", Model.CategoryId), new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(a => a.CategoryId, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="col-md-2">
+                                        @Html.LabelFor(a => a.Price)
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Html.TextBoxFor(a => a.Price, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(a => a.Price, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-2">
+                                        @Html.LabelFor(a => a.Quantity)
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Html.TextBoxFor(a => a.Quantity, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(a => a.Quantity, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="col-md-2">
+                                        @Html.LabelFor(a => a.Status)
+                                    </div>
+                                    <div class="col-md-4">
+                                        @Html.DropDownListFor(a => a.Status, new SelectList(Model.StatusDictionary,"Key","Value"), new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(a => a.Status, null, new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="col-md-12">
+                                        @Html.LabelFor(a => a.Description)
+                                        @Html.TextAreaFor(a => a.Description, new { @class = "form-control", cols = "100" })
+                                        @Html.ValidationMessageFor(a => a.Description, null, new { @class = "text-danger" })
+                                    </div> 
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+    <div class="clearfix"></div>
+                        <div class="col-md-offset-4 col-md-4">
+                            <label>
+                                <input class="btn btn-primary" type="submit" value="Submit" />
+                            </label>
+                            <label>
+                                <a class="btn btn-default" href="@Url.Action("Index","Product")"> Back </a>
+                            </label>
+                        </div>
+                        <div class="clearfix"></div>
+                    }
+                </div>
+            </div>
+
+@section scriptHeaders{
+    <script>
+        $(function() {
+            $('.img').change(function () {
+                readURL(this);
+            });
+        });
+    </script>
+}

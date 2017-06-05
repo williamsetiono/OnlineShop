@@ -1,0 +1,88 @@
+﻿body {
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    /*max-width: 280px;*/
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+.static-message {
+    position: absolute;
+    display: block;
+    width: 100%;
+}
+.page-header {
+    margin-top: 20px;
+}
+
+.alert {
+    margin-bottom: 0;
+}
+
+#loadding-spinner {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+#loadding-spinner .spinner {
+        position: absolute;
+    top: 45%;
+}
+.navbar-top-links .dropdown-menu li > form {
+        padding: 3px 20px;
+    min-height: 0;
+}.navbar-top-links .dropdown-menu li > form:hover{
+    cursor: pointer;
+        color: #262626;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
+.navbar-top-links .dropdown-menu li > form label{
+    font-weight: normal;
+}
+.navbar-top-links .dropdown-menu li > form > label:hover{
+    cursor: pointer;
+}
+.width-100 {
+    width: 100% !important;
+}
+.table tr td {
+    max-width: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,27 @@
+﻿@using OnlineShop.Core.Resources
+@model OnlineShop.Core.Models.Users.RegisterViewModel
+@{
+
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.TextBoxFor(a => a.UserName, new { @placeholder = "Name" })
+        @Html.ValidationMessageFor(model => model.UserName, null, new { @class = "text-danger" })
+    @Html.PasswordFor(a => a.Password, new { @placeholder = "Password" })
+        @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-danger" })
+    @Html.PasswordFor(a => a.ConfirmPassword, new { @placeholder = "Password" })
+        @Html.ValidationMessageFor(model => model.ConfirmPassword, null, new { @class = "text-danger" })
+    @Html.TextBoxFor(a => a.FullName, new { @placeholder = "Full Name" })
+        @Html.ValidationMessageFor(model => model.FullName, null, new { @class = "text-danger" })
+    @Html.TextBoxFor(a => a.Address, new { @placeholder = "Address" })
+        @Html.ValidationMessageFor(model => model.Address, null, new { @class = "text-danger" })
+    @Html.TextBoxFor(a => a.Phone, new { @placeholder = "Phone" })
+        @Html.ValidationMessageFor(model => model.Phone, null, new { @class = "text-danger" })
+    @Html.TextBoxFor(a => a.Email, new { @placeholder = "Email" })
+        @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
+
+    <button type="submit" class="btn btn-default">@Resource.Register</button>
+}
+

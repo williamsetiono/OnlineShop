@@ -1,0 +1,48 @@
+﻿@using OnlineShop.Core.Provider
+@using OnlineShop.Core.Resources
+@model OnlineShop.Core.Models.Orders.OrderDetailViewModel
+@{
+    ViewBag.Title = "OrderDetail";
+    Layout = Constants.UserLayOut;
+}
+
+<div class="features_items">
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <td>@Resource.HeaderProduct</td>
+                <td>@Resource.HeaderDescription</td>
+                <td>@Resource.HeaderQuantity</td>
+                <td>@Resource.HeaderPrice</td>
+                <td>@Resource.HeaderTotal</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.Description</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Price</td>
+                    <td>@item.Total.ToString("##.##")</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    @Html.LabelFor(a=>a.Couponid)
+                </td>
+                <td colspan="3">@Model.Couponid</td>
+                <td>
+                    @Model.Discount.ToString("##.##")
+                </td>
+            </tr>
+            <tr>
+                <td>@Resource.HeaderTotal</td>
+                <td colspan="4" class="text-right">@(((decimal)Model.Items.Sum(a => a.Total) - Model.Discount).ToString("##.##"))</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

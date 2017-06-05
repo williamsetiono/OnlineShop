@@ -1,0 +1,83 @@
+﻿@using OnlineShop.Core.Resources
+
+@{
+    ViewBag.Title = Resource.TitleOrderIndex;
+}
+
+<div>
+    <table class="table table-striped table-bordered table-hover" id="dataTables-orders">
+        <thead>
+            <tr>
+                <td>@Resource.HeaderCreatedDate</td>
+                <td>@Resource.HeaderStatus</td>
+                <td>@Resource.HeaderAmount</td>
+                <td>@Resource.HeaderTotal</td>
+                <td>@Resource.HeaderActions</td>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+@section scripts{
+@Scripts.Render("~/bundles/datatables")
+    <script>
+        $('#dataTables-orders').DataTable(
+            {
+            "sAjaxSource": "@Url.Action("GetAll", "orders")",
+            "bProcessing": false,
+            "bStateSave": false,
+            "bServerSide": true,
+            "sServerMethod": "POST",
+            "bSortCellsTop": false,
+            "iDisplayLength": 50,
+            "sDom": "Rlfrtip",
+            "bFilter": true,
+            "aaSorting": [],
+            "aoColumns": [
+                {
+                    "mData": "CreatedDate",
+                    "bSortable": true,
+                    "bSearchable": true,
+                    "fnCreatedCell": onCreateDateCell,
+                }, {
+                    "mData": "StrStatus",
+                    "bSortable": true,
+                    "bSearchable": true,
+                },{
+                    "mData": "Amount",
+                    "bSortable": true,
+                    "bSearchable": true,
+                },{
+                    "mData": "Total",
+                    "bSortable": false,
+                    "bSearchable": false,
+                },{
+                    "mData": null,
+                    "bSortable": false,
+                    "bSearchable": false,
+                    "fnCreatedCell": onCreateActionCell,
+                }
+            ],
+            "oColReorder": {
+                "iFixedColumns": 1
+            },
+
+            "fnRowCallback": dataTableRowCallback,
+            "fnDrawCallback": dataTableDrawCallback
+        });
+
+        function dataTableRowCallback(e, x) {
+        }
+        function dataTableDrawCallback(e, x) {
+        }
+
+        function onCreateActionCell(nTd, sData, oData, iRow, iCol) {
+            var html = '<a href="/Orders/OrderDetail/' + oData.Id + '"> Detail </a>';
+             $(nTd).html(html);
+
+        }
+        function onCreateDateCell(nTd, sData, oData, iRow, iCol) {
+            $(nTd).html(convertDate(sData));
+        }
+    </script>
+}

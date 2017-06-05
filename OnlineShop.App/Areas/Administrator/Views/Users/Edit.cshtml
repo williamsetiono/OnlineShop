@@ -1,0 +1,118 @@
+﻿@model OnlineShop.Core.Models.Users.UserViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Update User
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    @using (Html.BeginForm("Edit", "Users", null, FormMethod.Post, new Dictionary<string, object>() { { "role", "form" }}))
+                    {
+                        @Html.HiddenFor(a=>a.Id)
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(a => a.UserName)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(a => a.UserName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.UserName,null, new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-2">
+                                    @Html.LabelFor(a => a.FullName)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(a => a.FullName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.FullName, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(a => a.Password)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.PasswordFor(a => a.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.Password, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-2">
+                                    @Html.LabelFor(a => a.PasswordConfirm)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.PasswordFor(a => a.PasswordConfirm, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.Password, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(a => a.Address)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(a => a.Address, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.Address, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-2">
+                                    @Html.LabelFor(a => a.Phone)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(a => a.Phone, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.Phone, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(a => a.Email)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.Email, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-2">
+                                    @Html.LabelFor(a => a.Status)
+                                </div>
+                                <div class="col-md-4">
+                                    @Html.CheckBoxFor(a => a.Status)
+                                    @Html.ValidationMessageFor(a => a.Status, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="col-md-2">
+                                    @Html.LabelFor(a => a.RoleId)
+                                </div>
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(a => a.RoleId, new SelectList(Model.Roles, "Key", "Value", "-1"), new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(a => a.RoleId, null, new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-md-offset-4 col-md-4">
+                            <label>
+                                <input class="btn btn-primary" type="submit" value="Submit" />
+                            </label>
+                            <label>
+                                <a class="btn btn-default" href="@Url.Action("Index","Users")"> Back </a>
+                            </label>
+                        </div>
+                        <div class="clearfix"></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

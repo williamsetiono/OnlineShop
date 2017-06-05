@@ -1,0 +1,40 @@
+﻿@using OnlineShop.Core.Models.Users
+@using OnlineShop.Core.Provider
+@using OnlineShop.Core.Resources
+@model OnlineShop.Core.Models.Users.UserClientLoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    if(Model.RegisterViewModel == null) {Model.RegisterViewModel = new RegisterViewModel();}
+    if (Model.UserLoginViewModel == null) { Model.UserLoginViewModel = new UserLoginViewModel(); }
+    Layout = Constants.UserLayOut;
+}
+<div class="row">
+    <section id="form">
+        <!--form-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-1">
+                    <div class="login-form">
+                        <h2>@Resource.Login</h2>
+                        <!--login form-->
+                        @Html.Partial("/Views/Account/_LoginPartial.cshtml",Model.UserLoginViewModel)
+                    </div><!--/login form-->
+                </div>
+                <div class="col-sm-1">
+                    <h2 class="or">@Resource.LabelOr</h2>
+                </div>
+                <div class="col-sm-4">
+                    <div class="signup-form">
+                        <!--sign up form-->
+                        <h2>@Resource.Register</h2>
+                        @Html.Partial("/Views/Account/_RegisterPartial.cshtml", Model.RegisterViewModel)
+                    </div><!--/sign up form-->
+                </div>
+            </div>
+        </div>
+    </section><!--/form-->
+
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

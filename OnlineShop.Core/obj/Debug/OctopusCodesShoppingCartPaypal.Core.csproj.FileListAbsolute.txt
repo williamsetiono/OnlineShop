@@ -1,0 +1,58 @@
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Core.dll.config
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Core.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Core.pdb
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.SqlServer.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Newtonsoft.Json.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Models.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Models.pdb
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.xml
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Newtonsoft.Json.xml
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.csprojResolveAssemblyReference.cache
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.Resources.Resource.resources
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.csproj.GenerateResource.Cache
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.pdb
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Core.dll.config
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Core.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Core.pdb
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.SqlServer.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Newtonsoft.Json.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Models.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Models.pdb
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.xml
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Newtonsoft.Json.xml
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.csprojResolveAssemblyReference.cache
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.Resources.Resource.resources
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.csproj.GenerateResource.Cache
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.dll
+D:\OctopusCodes\Projects\NET\Octopus Shopping Cart and Paypal\Source Code\Submit\Main\Source Codes\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.pdb
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Core.dll.config
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Core.dll
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Core.pdb
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Models.dll
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\System.Web.Mvc.dll
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\OctopusCodesShoppingCartPaypal.Models.pdb
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\System.Web.Mvc.xml
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\bin\Debug\Microsoft.Web.Infrastructure.xml
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.Resources.Resource.resources
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.dll
+C:\Users\Administrator\Documents\Downloads\Main\OctopusCodes\OctopusCodesShoppingCartPaypal.Core\obj\Debug\OctopusCodesShoppingCartPaypal.Core.pdb

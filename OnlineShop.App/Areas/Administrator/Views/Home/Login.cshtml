@@ -1,0 +1,37 @@
+﻿@model OnlineShop.Core.Models.Users.UserLoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Areas/Administrator/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please Sign In</h3>
+                </div>
+                <div class="panel-body">
+                    @using(Html.BeginForm("Login","Home","Administrator",FormMethod.Post,new{@form ="role"})){
+                    <fieldset>
+                        <div class="form-group">
+                            @Html.TextBoxFor(a => a.UserName, new { @class = "form-control", @placeholder = "Username", @autofocus = "autofocus" })
+                        </div>
+                        <div class="form-group">
+                            @Html.PasswordFor(a => a.Password, new { @class = "form-control", @placeholder = "Username" })
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(a => a.Remember)
+                                @Html.LabelFor(a=>a.Remember)
+                            </label>
+                        </div>
+                        <!-- Change this to a button or input when using this as a form -->
+                        <input class="btn btn-lg btn-success btn-block" value="login" type="submit"/>
+                    </fieldset>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

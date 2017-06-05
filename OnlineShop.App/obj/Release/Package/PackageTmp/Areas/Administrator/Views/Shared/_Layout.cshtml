@@ -1,0 +1,94 @@
+﻿@using OnlineShop.Core.Models.MessageModels
+@using OnlineShop.Core.Provider
+@{var settings = new Dictionary<string, string>();
+  if (ViewBag.BaseSetting != null)
+  {
+      settings = (Dictionary<string, string>)ViewBag.BaseSetting;
+  }
+  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="@Url.Content("~/Content")/favicon.ico" />
+    @if (settings != null)
+    {
+        <title>@settings[Constants.SettingWebsiteName] - @ViewBag.Title</title>
+    }
+    else
+    {
+        <title>OnlineShop - @ViewBag.Title</title>
+    }
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/adminstyle")
+    @Styles.Render("~/Content/datatables")
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    @RenderSection("styleHeaders", required: false)
+
+</head>
+<body>
+        <!-- Navigation -->
+        <div class="panel-body " id="notify-wrapper">
+            @if (TempData.Keys.Contains(Constants.NotifyMessage))
+            {
+                var message = (NotifyModel)TempData[Constants.NotifyMessage];
+                <div class="alert @(message.Result ? "alert-success" : "alert-danger") alert-dismissable">
+                    <button class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <span class="alert-content">@message.Message</span>
+                </div>
+            }
+        </div>
+        @RenderBody()
+        <!-- /#page-wrapper -->
+    <!-- jQuery -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/datatables")
+    <!-- /#wrapper -->
+    @Scripts.Render("~/bundles/raphael")
+    <script src="~/Scripts/js.cookie.js"></script>
+    <script src="@Url.Content("~/Scripts/sb-admin-2.js")"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+    <div class="modal fade" id="msgModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="modal-header">Modal Header</h4>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="loadding-wrapper">
+        <div id="loadding-spinner">
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom spinner"></i>
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <script src="~/Scripts/common.js"></script>
+    @RenderSection("scriptHeaders", required: false)
+
+</body>
+</html>
+

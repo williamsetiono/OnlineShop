@@ -1,0 +1,9 @@
+C:\Users\Administrator\Documents\Downloads\Main\OnlineShop\OnlineShop.Models\bin\Release\OnlineShop.Models.dll.config
+C:\Users\Administrator\Documents\Downloads\Main\OnlineShop\OnlineShop.Models\bin\Release\OnlineShop.Models.dll
+C:\Users\Administrator\Documents\Downloads\Main\OnlineShop\OnlineShop.Models\bin\Release\OnlineShop.Models.pdb
+C:\Users\Administrator\Documents\Downloads\Main\OnlineShop\OnlineShop.Models\bin\Release\EntityFramework.dll
+C:\Users\Administrator\Documents\Downloads\Main\OnlineShop\OnlineShop.Models\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Documents\Downloads\Main\OnlineShop\OnlineShop.Models\bin\Release\EntityFramework.xml
+C:\Users\Administrator\Documents\Downloads\Main\OnlineShop\OnlineShop.Models\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Documents\Downloads\Main\OnlineShop\OnlineShop.Models\obj\Release\OnlineShop.Models.dll
+C:\Users\Administrator\Documents\Downloads\Main\OnlineShop\OnlineShop.Models\obj\Release\OnlineShop.Models.pdb
